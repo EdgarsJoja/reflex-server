@@ -10,12 +10,24 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "LobbyJsonDecorator",
+"language": "GDScript",
+"path": "res://scripts/player/LobbyJsonDecorator.gd"
+}, {
+"base": "Node",
 "class": "Player",
 "language": "GDScript",
 "path": "res://scripts/player/Player.gd"
+}, {
+"base": "Node",
+"class": "PlayerFormatter",
+"language": "GDScript",
+"path": "res://scripts/player/PlayerFormatter.gd"
 } ]
 _global_script_class_icons={
-"Player": ""
+"LobbyJsonDecorator": "",
+"Player": "",
+"PlayerFormatter": ""
 }
 
 [application]

@@ -19,16 +19,21 @@ func _ready():
 		print('Server ready')
 
 
-
 func player_connected(id) -> void:
 	print("player (%s) connected" % id)
 	Lobby.add_player(id)
 
-	rpc('update_lobby', Lobby.get_players())
+	clients_update_lobby()
 
 
 func player_disconnected(id) -> void:
 	print("player (%s) disconnected" % id)
 	Lobby.remove_player(id)
 
-	rpc('update_lobby', Lobby.get_players())
+	clients_update_lobby()
+
+
+func clients_update_lobby():	
+	var lobbyJsonDecorator = LobbyJsonDecorator.new()
+	rpc('update_lobby', lobbyJsonDecorator.get_players())
+
