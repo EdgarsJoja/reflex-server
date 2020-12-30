@@ -33,6 +33,15 @@ func player_disconnected(id) -> void:
 	clients_update_lobby()
 
 
+remote func update_player_data(data: Dictionary) -> void:
+	var sender_id = get_tree().get_rpc_sender_id()
+	
+	Lobby.update_player(sender_id, data)
+	print("player (%s) data updated: %s" % [sender_id, data])
+	
+	clients_update_lobby()
+
+
 func clients_update_lobby():	
 	var lobbyJsonDecorator = LobbyJsonDecorator.new()
 	rpc('update_lobby', lobbyJsonDecorator.get_players())
