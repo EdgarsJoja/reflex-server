@@ -10,5 +10,6 @@ func _ready():
 func to_json(player: Player) -> Dictionary:
 	return {
 		'network_id': player.get_peer_id(),
-		'username': player.get_username()
+		'username': player.get_username(),
+		'status': player.get_status()
 	}

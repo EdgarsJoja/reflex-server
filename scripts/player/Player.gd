@@ -4,6 +4,7 @@ class_name Player
 
 var peer_id: int
 var username: String = 'Anonymous'
+var status: String = 'waiting'
 
 
 func _ready():
@@ -26,6 +27,15 @@ func set_username(value: String) -> Player:
 
 func get_username() -> String:
 	return username
+
+
+func set_status(value: String) -> Player:
+	status = value	
+	return self
+
+
+func get_status() -> String:
+	return status
 
 
 func _to_string():

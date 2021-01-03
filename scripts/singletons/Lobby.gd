@@ -29,6 +29,8 @@ func update_player(id, data: Dictionary) -> void:
 			match key:
 				'username':
 					player.set_username(data[key])
+				'status':
+					player.set_status(data[key])
 				_:
 					pass
 		
